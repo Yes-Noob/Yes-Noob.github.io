@@ -27,20 +27,29 @@
 }
 
 /* #endregion */
+/* #endregion */
 
 /* #region @note introduction部分 */
 .introduction {
     display: grid;
     grid-template:
-        "left right" 400px
-        ". right" auto
+        "left right" auto
         / 3fr 9fr;
     gap: 0 15px;
-    margin-bottom: var(--classic-margin);
 }
 
-.self-info {
+@media screen and (max-width: 992px) {
+    .introduction {
+        grid-template:
+            "left" auto
+            "right" auto
+            / 100%;
+    }
+}
+
+.self-info-container {
     grid-area: left;
+    margin-bottom: var(--classic-margin);
 }
 
 .profile {
@@ -96,6 +105,7 @@
 
 .find-me {
     width: 100%;
+    margin-bottom: 10px;
 }
 
 .find-me a {
@@ -105,7 +115,6 @@
     text-align: center;
     color: var(--classic-white);
     background-color: var(--classic-blue);
-    float: left;
     border-radius: var(--inpage-border-radius);
 }
 
@@ -113,13 +122,14 @@
     grid-area: right;
     max-height: 600px;
     overflow: hidden;
+    margin-bottom: var(--classic-margin);
 }
 
-/* #endregion */
 /* #endregion */
 
 /* #region @note nav部分 */
 nav {
+    --center-margin-top: 15px;
     width: 100%;
     height: 60px;
     position: fixed;
@@ -131,7 +141,7 @@ nav {
 }
 
 .site-info-on-nav {
-    margin-top: 16px;
+    margin-top: var(--center-margin-top);
     float: left;
     font-weight: 800;
     font-size: 21px;
@@ -144,7 +154,7 @@ nav {
 
 .nav-content>div {
     float: left;
-    margin: 16px 0 0 2.5em;
+    margin: var(--center-margin-top) 0 0 2.5em;
 }
 
 .nav-content a {
@@ -158,14 +168,22 @@ main {
     display: grid;
     grid-template:
         "a b" auto
-        "c c" auto
         / 9fr 3fr;
     gap: 15px;
-    margin-bottom: var(--classic-margin);
+}
+
+@media screen and (max-width: 992px) {
+    main {
+        grid-template:
+            "a" auto
+            "b" auto
+            / 100%;
+    }
 }
 
 .articles-list {
     grid-area: a;
+    margin-bottom: var(--classic-margin);
 }
 
 .article {
@@ -233,8 +251,7 @@ main {
 }
 
 .pagination {
-    width: 300px;
-    margin: 0 auto;
+    text-align: center;
 }
 
 .pagination>span,
@@ -255,6 +272,7 @@ main {
 
 aside {
     grid-area: b;
+    margin-bottom: var(--classic-margin);
 }
 
 aside>div.card {
