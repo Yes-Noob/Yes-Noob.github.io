@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yes-Noob</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="/public/public.css">
+    <link rel="stylesheet" href="index.css">
+    <!-- JS依赖项 -->
+    <script src="https://cdn.staticfile.org/jquery/3.7.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- 网站开头 -->
+    <header>
+        <div class="screen">
+            <h1 class="site-title">Yes-Noob</h1>
+            <div class="description-about-title">满天繁星不负缘</div>
+        </div>
+        <div class="introduction container">
+            <div class="self-info card">
+                <div class="profile"></div>
+                <div class="name">Yes-Noob</div>
+                <div class="org">Starlight Studio</div>
+                <div class="data">
+                    <div class="articles-data">
+                        <div>Articles</div>
+                        <div>999</div>
+                    </div>
+                    <div class="pv-data">
+                        <div>PV</div>
+                        <div>999</div>
+                    </div>
+                    <div class="projects-data">
+                        <div>Projects</div>
+                        <div>999</div>
+                    </div>
+                </div>
+                <div class="find-me">
+                    <a class="github" href="https://github.com/Yes-Noob">
+                        <i class="fa fa-github"></i> Find Me On GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="about-me card">{about-me}</div>
+        </div>
+    </header>
+    <!-- 导航栏 -->
+    <nav>
+        <div class="site-info-on-nav">Yes-Noob</div>
+        <div class="nav-content">
+            <div class="nav-program">
+                <a href="/index.html">Home</a>
+            </div>
+            <div class="nav-program">
+                <a href="/custom-sites/tags/tags.html">Tags</a>
+            </div>
+            <div class="nav-program">
+                <a href="/custom-sites/timeline/timeline.html">Tineline</a>
+            </div>
+            <div class="nav-program">
+                <a href="/custom-sites/projects/projects.html">Projects</a>
+            </div>
+        </div>
+    </nav>
+    <!-- 主体 -->
+    <main class="container">
+        <!-- 文章列表 -->
+        <div class="articles-list">
+            <template id="article">
+                <div class="article card">
+                    <a href="{href}">
+                        <div class="img-container">
+                            <a href="{href}">
+                                <div class="img"></div>
+                        </div>
+                    </a>
+                    <div class="article-content">
+                        <a href="{href}">
+                            <div class="title">{title}</div>
+                        </a>
+                        <div class="info">
+                            <time>{date}</time>
+                            <div class="tag-of-article">{tag}</div>
+                        </div>
+                        <div class="article-content-text">{description}</div>
+                    </div>
+                </div>
+            </template>
+            <div class="pagination">
+                <span class="active">1</span>
+                <a href="pages/2.html">&gt;</a>
+            </div>
+        </div>
+        <!-- 侧边栏 -->
+        <aside>
+            <div class="card">
+                <div class="advices">
+                    <div class="program-title">Advice</div>
+                    <template id="advice-article">
+                        <div class="advice-article">
+                            <a href="{href}" style="display: grid;">
+                                <div class="img"></div>
+                            </a>
+                            <div class="advice-content">
+                                <a href="{href}">
+                                    <div class="title">{title}</div>
+                                </a>
+                                <time>{time}</time>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </aside>
+    </main>
+    <!-- 页脚 -->
+    <footer>
+        <p class="copyright">Copyright © 2023 Yes-Noob All Rights Reserved</p>
+        <p>
+            <i class="fa fa-github"></i>
+            Show this page on <a href="https://github.com/Yes-Noob/Yes-Noob.github.io">GitHub</a>
+        </p>
+    </footer>
+    <!-- JavaScript -->
+    <script src="index.js"></script>
+</body>
+
+</html>

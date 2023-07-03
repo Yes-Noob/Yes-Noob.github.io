@@ -1,0 +1,322 @@
+/* #region @note header部分 */
+/* #region @note screen部分 */
+.screen {
+    width: 100%;
+    height: 95vh;
+    background-image:
+        linear-gradient(-45deg, var(--classic-blue), var(--classic-green), var(--classic-blue));
+    padding-top: 40vh;
+    margin-bottom: var(--classic-margin);
+}
+
+.site-title,
+.description-about-title {
+    text-align: center;
+    color: var(--classic-white);
+}
+
+.site-title {
+    font-weight: bold;
+    font-size: 36px;
+    margin-bottom: var(--classic-margin);
+}
+
+.description-about-title {
+    font-size: 18px;
+    letter-spacing: 1.5px;
+}
+
+/* #endregion */
+
+/* #region @note introduction部分 */
+.introduction {
+    display: grid;
+    grid-template:
+        "left right" 400px
+        ". right" auto
+        / 3fr 9fr;
+    gap: 0 15px;
+    margin-bottom: var(--classic-margin);
+}
+
+.self-info {
+    grid-area: left;
+}
+
+.profile {
+    --profile-radius: 12px;
+    width: 100px;
+    height: 100px;
+    background-image: url({url});
+    background-color: var(--classic-blue);
+    border-radius: var(--profile-radius);
+    margin: 10px auto;
+}
+
+.name,
+.org {
+    margin: 15px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.org {
+    font-weight: normal;
+    font-size: 14px;
+    color: var(--classic-gray);
+}
+
+.data {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.data::after {
+    content: "";
+    clear: both;
+    display: block;
+    overflow: hidden;
+}
+
+.data>div {
+    float: left;
+    width: 33.333%;
+    height: 100px;
+    border-right: var(--classic-sparator);
+    text-align: center;
+    padding-top: 10px;
+    line-height: 32px;
+    color: var(--classic-black);
+}
+
+.data :last-child {
+    border-right: none
+}
+
+.find-me {
+    width: 100%;
+}
+
+.find-me a {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    text-align: center;
+    color: var(--classic-white);
+    background-color: var(--classic-blue);
+    float: left;
+    border-radius: var(--inpage-border-radius);
+}
+
+.about-me {
+    grid-area: right;
+    max-height: 600px;
+    overflow: hidden;
+}
+
+/* #endregion */
+/* #endregion */
+
+/* #region @note nav部分 */
+nav {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    left: 0;
+    top: -60px;
+    background-color: #ffffffee;
+    border-bottom: 1px solid #aaa;
+    padding: 0 80px;
+}
+
+.site-info-on-nav {
+    margin-top: 16px;
+    float: left;
+    font-weight: 800;
+    font-size: 21px;
+}
+
+.nav-content {
+    float: right;
+    height: 100%;
+}
+
+.nav-content>div {
+    float: left;
+    margin: 16px 0 0 2.5em;
+}
+
+.nav-content a {
+    color: var(--classic-green)
+}
+
+/* #endregion */
+
+/* #region @note main部分 */
+main {
+    display: grid;
+    grid-template:
+        "a b" auto
+        "c c" auto
+        / 9fr 3fr;
+    gap: 15px;
+    margin-bottom: var(--classic-margin);
+}
+
+.articles-list {
+    grid-area: a;
+}
+
+.article {
+    display: grid;
+    grid-template:
+        "img content" 300px
+        / 4fr 6fr;
+    width: 100%;
+    height: 300px;
+    padding: 0;
+}
+
+.article .img-container {
+    grid-area: img;
+}
+
+.article .img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+}
+
+.article .article-content {
+    grid-area: content;
+    padding: 50px 40px;
+}
+
+.article-content .title {
+    width: 100%;
+    max-height: 80px;
+    color: var(--classic-black);
+    font-size: 1.72em;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.article-content .info {
+    width: 100%;
+    height: auto;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.article-content .info::after {
+    content: "";
+    clear: both;
+    display: block;
+    overflow: hidden;
+}
+
+.article-content .info time {
+    float: left;
+    border-right: 1px solid #ccc;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+.article-content .info .tag-of-article {
+    float: left;
+}
+
+.article-content .article-content-text {
+    color: #666
+}
+
+.pagination {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.pagination>span,
+.pagination>a {
+    display: inline-block;
+    line-height: 2.5em;
+    width: 2.5em;
+    height: 2.5em;
+    margin: 0 6px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    border-radius: var(--inpage-border-radius);
+}
+
+.active {
+    background-color: var(--classic-green);
+}
+
+aside {
+    grid-area: b;
+}
+
+aside>div.card {
+    min-height: 200px;
+}
+
+.advices {
+    margin: 10px 10px;
+}
+
+.program-title {
+    border-bottom: 1px solid #efefef;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.advice-article {
+    display: grid;
+    grid-template:
+        "img content" 60px
+        / 60px calc(100% - 60px - 1em);
+    gap: 0 1em;
+    width: 100%;
+    height: 70px;
+    padding-bottom: 10px;
+    border-bottom: 0.5px solid #efefef;
+    margin-bottom: 10px;
+}
+
+.advice-article .img {
+    grid-area: img;
+    width: 60px;
+    height: 60px;
+}
+
+.advice-content {
+    grid-area: content;
+}
+
+.advice-article .title {
+    width: 100%;
+    max-height: 40px;
+    font-size: 15px;
+    overflow: hidden;
+    color: var(--classic-black);
+}
+
+.advice-article time {
+    font-size: 13px;
+    color: #ccc
+}
+
+/* #endregion */
+
+/* #region @note footer部分 */
+footer {
+    width: 100%;
+    background-color: var(--classic-green);
+    color: #fff;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/* #endregion */
