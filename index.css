@@ -1,3 +1,88 @@
+/* #region @note nav部分 */
+nav {
+    --center-margin-top: 15px;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    left: 0;
+    top: -60px;
+    background-color: #ffffffee;
+    border-bottom: 1px solid #aaa;
+    padding: 0 80px;
+}
+
+.site-info-on-nav {
+    margin-top: var(--center-margin-top);
+    float: left;
+    font-weight: 800;
+    font-size: 21px;
+}
+
+.nav-content {
+    float: right;
+    height: 100%;
+}
+
+@media screen and(max-width: 718px) {
+    .nav-content {
+        display: none;
+    }
+
+    .aside-nav-button, .aside-nav-content {
+        display: block;
+    }
+}
+
+.nav-program {
+    float: left;
+    margin: var(--center-margin-top) 0 0 2.5em;
+    color: var(--classic-green)
+}
+
+.nav-program a {
+    color: inherit;
+}
+
+.aside-nav-content {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: var(--classic-white);
+    padding: 10px;
+}
+
+.aside-nav-content hr {
+    margin: 10px 0;
+    border: 2px dashed var(--classic-blue);
+}
+
+.aside-nav-content a {
+    display: block;
+}
+
+.aside-nav-content .nav-program {
+    --padding: 16px;
+    width: 100%;
+    text-align: center;
+    padding-top: var(--padding);
+    padding-bottom: var(--padding);
+    border-bottom: var(--classic-sparator);
+    margin: 0;
+    transition: background-color 0.3s
+}
+
+.aside-nav-content .nav-program:hover {
+    color: var(--classic-white);
+    background-color: var(--classic-green);
+}
+
+
+
+/* #endregion */
+
 /* #region @note header部分 */
 /* #region @note screen部分 */
 .screen {
@@ -127,42 +212,6 @@
 
 /* #endregion */
 
-/* #region @note nav部分 */
-nav {
-    --center-margin-top: 15px;
-    width: 100%;
-    height: 60px;
-    position: fixed;
-    left: 0;
-    top: -60px;
-    background-color: #ffffffee;
-    border-bottom: 1px solid #aaa;
-    padding: 0 80px;
-}
-
-.site-info-on-nav {
-    margin-top: var(--center-margin-top);
-    float: left;
-    font-weight: 800;
-    font-size: 21px;
-}
-
-.nav-content {
-    float: right;
-    height: 100%;
-}
-
-.nav-content>div {
-    float: left;
-    margin: var(--center-margin-top) 0 0 2.5em;
-}
-
-.nav-content a {
-    color: var(--classic-green)
-}
-
-/* #endregion */
-
 /* #region @note main部分 */
 main {
     display: grid;
@@ -262,7 +311,6 @@ main {
     height: 2.5em;
     margin: 0 6px;
     box-shadow: var(--box-shadow);
-    text-align: center;
     border-radius: var(--inpage-border-radius);
 }
 
