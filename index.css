@@ -23,16 +23,19 @@ nav {
     height: 100%;
 }
 
-@media screen and(max-width: 718px) {
-    .nav-content {
+@media screen and (max-width: 718px) {
+    .nav-content .nav-program {
         display: none;
     }
 
-    .aside-nav-button, .aside-nav-content {
-        display: block;
+    div.nav-content.aside-nav-button, .nav.aside-nav-content {
+        display: block !important;
     }
 }
 
+.aside-nav-button {
+    display: none;
+}
 .nav-program {
     float: left;
     margin: var(--center-margin-top) 0 0 2.5em;
