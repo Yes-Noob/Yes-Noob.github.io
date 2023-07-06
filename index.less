@@ -56,6 +56,23 @@ nav {
         background-color: @classic-white;
         padding: 10px;
 
+        .profile {
+            @classic-profile-radius: 12px;
+            width: 100px;
+            height: 100px;
+            background-image: url({url});
+            background-color: @classic-blue;
+            border-radius: @classic-profile-radius;
+            margin: 10px auto;
+        }
+
+        .name {
+            margin: 15px 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 23px;
+        }
+
         hr {
             margin: 10px 0;
             border: 2px dashed @classic-blue;
@@ -128,38 +145,26 @@ nav {
 }
 
 
-// 未完待续...
-
-
 .screen {
     width: 100%;
     height: 95vh;
-    background-image:
-        linear-gradient(-45deg, @classic-blue, @classic-green, @classic-blue);
+    background-image: linear-gradient(-45deg, @classic-blue, @classic-green, @classic-blue);
     padding-top: 40vh;
     margin-bottom: @classic-margin;
-}
-
-.site-title,
-.description-about-title {
     text-align: center;
     color: @classic-white;
+
+    .site-title {
+        font-weight: bold;
+        font-size: 36px;
+        margin-bottom: @classic-margin;
+    }
+
+    .description-about-title {
+        font-size: 18px;
+        letter-spacing: 1.5px;
+    }
 }
-
-.site-title {
-    font-weight: bold;
-    font-size: 36px;
-    margin-bottom: @classic-margin;
-}
-
-.description-about-title {
-    font-size: 18px;
-    letter-spacing: 1.5px;
-}
-
-
-
-
 
 .introduction {
     display: grid;
@@ -167,97 +172,94 @@ nav {
         "left right" auto
         / 3fr 9fr;
     gap: 0 15px;
-}
 
-@media screen and (max-width: 992px) {
-    .introduction {
-        grid-template:
-            "left" auto
-            "right" auto
-            / 100%;
+    .self-info-container {
+        grid-area: left;
+        margin-bottom: @classic-margin;
+
+        .profile {
+            @classic-profile-radius: 12px;
+            width: 100px;
+            height: 100px;
+            background-image: url({url});
+            background-color: @classic-blue;
+            border-radius: @classic-profile-radius;
+            margin: 10px auto;
+        }
+
+        .name,
+        .org {
+            margin: 15px 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 23px;
+        }
+
+        .org {
+            font-weight: normal;
+            font-size: 14px;
+            color: @classic-gray;
+        }
+
+        .data {
+            width: 100%;
+            margin: 10px 0;
+
+            &>div {
+                float: left;
+                width: 33.333%;
+                height: 100px;
+                border-right: @classic-sparator;
+                text-align: center;
+                padding-top: 10px;
+                line-height: 32px;
+                color: @classic-black;
+            }
+
+            &::after {
+                content: "";
+                clear: both;
+                display: block;
+                overflow: hidden;
+            }
+
+            &:last-child {
+                border-right: none
+            }
+        }
+
+        .find-me {
+            width: 100%;
+            margin-bottom: 10px;
+
+            a {
+                display: block;
+                width: 100%;
+                padding: 8px 0;
+                text-align: center;
+                color: @classic-white;
+                background-color: @classic-blue;
+                border-radius: @classic-inpage-border-radius;
+            }
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        & {
+            grid-template:
+                "left" auto
+                "right" auto
+                / 100%;
+        }
+    }
+
+    .about-me {
+        grid-area: right;
+        max-height: 600px;
+        overflow: hidden;
+        margin-bottom: @classic-margin;
     }
 }
-
-.self-info-container {
-    grid-area: left;
-    margin-bottom: @classic-margin;
-}
-
-.profile {
-    @classic-profile-radius: 12px;
-    width: 100px;
-    height: 100px;
-    background-image: url({url});
-    background-color: @classic-blue;
-    border-radius: @classic-profile-radius;
-    margin: 10px auto;
-}
-
-.name,
-.org {
-    margin: 15px 0;
-    text-align: center;
-    font-weight: bold;
-    font-size: 23px;
-}
-
-.org {
-    font-weight: normal;
-    font-size: 14px;
-    color: @classic-gray;
-}
-
-.data {
-    width: 100%;
-    margin: 10px 0;
-}
-
-.data::after {
-    content: "";
-    clear: both;
-    display: block;
-    overflow: hidden;
-}
-
-.data>div {
-    float: left;
-    width: 33.333%;
-    height: 100px;
-    border-right: @classic-sparator;
-    text-align: center;
-    padding-top: 10px;
-    line-height: 32px;
-    color: @classic-black;
-}
-
-.data :last-child {
-    border-right: none
-}
-
-.find-me {
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.find-me a {
-    display: block;
-    width: 100%;
-    padding: 8px 0;
-    text-align: center;
-    color: @classic-white;
-    background-color: @classic-blue;
-    border-radius: @classic-inpage-border-radius;
-}
-
-.about-me {
-    grid-area: right;
-    max-height: 600px;
-    overflow: hidden;
-    margin-bottom: @classic-margin;
-}
-
-
-
 
 main {
     display: grid;
@@ -265,160 +267,164 @@ main {
         "a b" auto
         / 9fr 3fr;
     gap: 15px;
-}
 
-@media screen and (max-width: 992px) {
-    main {
-        grid-template:
-            "a" auto
-            "b" auto
-            / 100%;
+    .articles-list {
+        grid-area: a;
+        margin-bottom: @classic-margin;
+
+        .article {
+            display: grid;
+            grid-template:
+                "img content" 300px
+                / 4fr 6fr;
+            width: 100%;
+            height: 300px;
+            padding: 0;
+
+
+            .img-container {
+                grid-area: img;
+
+                .img {
+                    width: 100%;
+                    height: 100%;
+                    border-top-left-radius: @classic-inpage-border-radius;
+                    border-bottom-left-radius: @classic-inpage-border-radius;
+                }
+            }
+
+            .article-content {
+                grid-area: content;
+                padding: 50px 40px;
+
+
+                .title {
+                    width: 100%;
+                    max-height: 80px;
+                    color: @classic-black;
+                    font-size: 1.72em;
+                    margin-bottom: 10px;
+                    overflow: hidden;
+                }
+
+                .info {
+                    width: 100%;
+                    height: auto;
+                    color: #ccc;
+                    margin-bottom: 10px;
+
+                    time {
+                        float: left;
+                        border-right: 1px solid #ccc;
+                        padding-right: 10px;
+                        margin-right: 10px;
+                    }
+
+                    .tag-of-article {
+                        float: left;
+                    }
+
+                    &::after {
+                        content: "";
+                        clear: both;
+                        display: block;
+                        overflow: hidden;
+                    }
+                }
+
+                .article-content-text {
+                    color: #666
+                }
+            }
+        }
+
+        .pagination {
+            text-align: center;
+
+            .active {
+                background-color: @classic-green;
+            }
+
+            span,
+            a {
+                display: inline-block;
+                line-height: 2.5em;
+                width: 2.5em;
+                height: 2.5em;
+                margin: 0 6px;
+                box-shadow: @classic-box-shadow;
+                border-radius: @classic-inpage-border-radius;
+            }
+        }
+    }
+
+
+
+    aside {
+        grid-area: b;
+        margin-bottom: @classic-margin;
+
+        .card {
+            min-height: 200px;
+        }
+
+        .advices {
+            margin: 10px 10px;
+
+            .program-title {
+                border-bottom: 1px solid #efefef;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+            }
+
+            .advice-article {
+                display: grid;
+                grid-template:
+                    "img content" 60px
+                    / 60px calc(100% - 60px - 1em);
+                gap: 0 1em;
+                width: 100%;
+                height: 70px;
+                padding-bottom: 10px;
+                border-bottom: 0.5px solid #efefef;
+                margin-bottom: 10px;
+
+
+                .img {
+                    grid-area: img;
+                    width: 60px;
+                    height: 60px;
+                }
+
+                .advice-content {
+                    grid-area: content;
+                }
+
+                .title {
+                    width: 100%;
+                    max-height: 40px;
+                    font-size: 15px;
+                    overflow: hidden;
+                    color: @classic-black;
+                }
+
+                time {
+                    font-size: 13px;
+                    color: #ccc
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        & {
+            grid-template:
+                "a" auto
+                "b" auto
+                / 100%;
+        }
     }
 }
-
-.articles-list {
-    grid-area: a;
-    margin-bottom: @classic-margin;
-}
-
-.article {
-    display: grid;
-    grid-template:
-        "img content" 300px
-        / 4fr 6fr;
-    width: 100%;
-    height: 300px;
-    padding: 0;
-}
-
-.article .img-container {
-    grid-area: img;
-}
-
-.article .img {
-    width: 100%;
-    height: 100%;
-    border-top-left-radius: @classic-inpage-border-radius;
-    border-bottom-left-radius: @classic-inpage-border-radius;
-}
-
-.article .article-content {
-    grid-area: content;
-    padding: 50px 40px;
-}
-
-.article-content .title {
-    width: 100%;
-    max-height: 80px;
-    color: @classic-black;
-    font-size: 1.72em;
-    margin-bottom: 10px;
-    overflow: hidden;
-}
-
-.article-content .info {
-    width: 100%;
-    height: auto;
-    color: #ccc;
-    margin-bottom: 10px;
-}
-
-.article-content .info::after {
-    content: "";
-    clear: both;
-    display: block;
-    overflow: hidden;
-}
-
-.article-content .info time {
-    float: left;
-    border-right: 1px solid #ccc;
-    padding-right: 10px;
-    margin-right: 10px;
-}
-
-.article-content .info .tag-of-article {
-    float: left;
-}
-
-.article-content .article-content-text {
-    color: #666
-}
-
-.pagination {
-    text-align: center;
-}
-
-.pagination>span,
-.pagination>a {
-    display: inline-block;
-    line-height: 2.5em;
-    width: 2.5em;
-    height: 2.5em;
-    margin: 0 6px;
-    box-shadow: @classic-box-shadow;
-    border-radius: @classic-inpage-border-radius;
-}
-
-.active {
-    background-color: @classic-green;
-}
-
-aside {
-    grid-area: b;
-    margin-bottom: @classic-margin;
-}
-
-aside>div.card {
-    min-height: 200px;
-}
-
-.advices {
-    margin: 10px 10px;
-}
-
-.program-title {
-    border-bottom: 1px solid #efefef;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-}
-
-.advice-article {
-    display: grid;
-    grid-template:
-        "img content" 60px
-        / 60px calc(100% - 60px - 1em);
-    gap: 0 1em;
-    width: 100%;
-    height: 70px;
-    padding-bottom: 10px;
-    border-bottom: 0.5px solid #efefef;
-    margin-bottom: 10px;
-}
-
-.advice-article .img {
-    grid-area: img;
-    width: 60px;
-    height: 60px;
-}
-
-.advice-content {
-    grid-area: content;
-}
-
-.advice-article .title {
-    width: 100%;
-    max-height: 40px;
-    font-size: 15px;
-    overflow: hidden;
-    color: @classic-black;
-}
-
-.advice-article time {
-    font-size: 13px;
-    color: #ccc
-}
-
 
 
 
