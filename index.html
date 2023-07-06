@@ -7,7 +7,6 @@
     <title>Yes-Noob</title>
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
-    <link rel="stylesheet/less" href="/public/public.less">
     <link rel="stylesheet/less" href="index.less">
     <!-- JS依赖项 -->
     <script src="https://cdn.staticfile.org/jquery/3.7.0/jquery.min.js"></script>
@@ -31,8 +30,8 @@
             <div class="nav-program">
                 <a href="/custom-sites/projects/projects.html">Projects</a>
             </div>
-            <div class="nav-program aside-nav-button">
-                <a href="void(0)"><i class="fa fa-bars"></i></a>
+            <div id="aside-nav-button">
+                <a href="javascript:void(0)"><i class="fa fa-bars"></i></a>
             </div>
         </div>
         <!-- 为移动设备准备的导航栏 -->
@@ -47,15 +46,12 @@
                 <div class="nav-program">Tags</div>
             </a>
             <a href="/custom-sites/timeline/timeline.html">
-                <div class="nav-program">
-                    Tineline
-                </div>
+                <div class="nav-program">Tineline</div>
             </a>
             <a href="/custom-sites/projects/projects.html">
-                <div class="nav-program">
-                    Projects
-                </div>
+                <div class="nav-program">Projects</div>
             </a>
+            <div class="menu-mask"></div>
         </div>
     </nav>
     <!-- 网站开头 -->
@@ -151,7 +147,8 @@
         <p class="copyright">Copyright © 2023 Yes-Noob All Rights Reserved</p>
         <p>
             <i class="fa fa-github"></i>
-            Show this page on <a href="https://github.com/Yes-Noob/Yes-Noob.github.io">GitHub</a>
+            Show this page on
+            <a href="https://github.com/Yes-Noob/Yes-Noob.github.io">GitHub</a>
         </p>
     </footer>
     <!-- JavaScript -->

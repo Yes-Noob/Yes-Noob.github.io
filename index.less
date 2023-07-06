@@ -1,112 +1,155 @@
-/* #region @note nav部分 */
+@import "/public/public.less";
+
+
 nav {
-    --center-margin-top: 15px;
+
     width: 100%;
     height: 60px;
     position: fixed;
     left: 0;
     top: -60px;
-    background-color: #ffffffee;
-    border-bottom: 1px solid #aaa;
+    background-color: #fffe;
+    border-bottom: 1px solid @classic-gray;
     padding: 0 80px;
-}
 
-.site-info-on-nav {
-    margin-top: var(--center-margin-top);
-    float: left;
-    font-weight: 800;
-    font-size: 21px;
-}
+    .site-info-on-nav {
+        margin-top: 15px;
+        float: left;
+        font-weight: 800;
+        font-size: 21px;
+    }
 
-.nav-content {
-    float: right;
-    height: 100%;
-}
+    .nav-program {
+        float: left;
+        margin: 18px 0 0 2.5em;
+        color: @classic-green;
 
-@media screen and (max-width: 718px) {
-    .nav-content .nav-program {
+        a {
+            color: inherit;
+        }
+    }
+
+    .nav-content {
+        float: right;
+        height: 100%;
+
+        #aside-nav-button {
+            .nav-program();
+
+            @media screen and (min-width: 718px) {
+                display: none;
+            }
+
+            @media screen and (max-width: 718px) {
+                display: block;
+            }
+        }
+    }
+
+    .aside-nav-content {
         display: none;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 300px;
+        height: 100%;
+        background-color: @classic-white;
+        padding: 10px;
+
+        hr {
+            margin: 10px 0;
+            border: 2px dashed @classic-blue;
+        }
+
+        a {
+            display: block;
+        }
+
+        .menu-mask {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            animation-iteration-count: 1;
+        }
+
+        @keyframes show {
+            from {
+                background-color: #0000;
+            }
+
+            to {
+                background-color: #000a;
+            }
+        }
+
+        @keyframes hide {
+            from {
+                background-color: #000a;
+            }
+
+            to {
+                background-color: #0000;
+            }
+        }
+
+        .nav-program {
+            @classic-padding: 16px;
+            width: 100%;
+            text-align: center;
+            padding-top: @classic-padding;
+            padding-bottom: @classic-padding;
+            border-bottom: @classic-sparator;
+            margin: 0;
+            transition: background-color 0.3s;
+
+            &:hover {
+                color: @classic-white;
+                background-color: @classic-green;
+            }
+        }
     }
 
-    div.nav-content.aside-nav-button, .nav.aside-nav-content {
-        display: block !important;
+    @media screen and (max-width: 718px) {
+        & {
+            padding: 0 30px;
+        }
+
+        .nav-content>.nav-program {
+            display: none;
+        }
+
+        .aside-nav-content {
+            display: block;
+        }
     }
 }
 
-.aside-nav-button {
-    display: none;
-}
-.nav-program {
-    float: left;
-    margin: var(--center-margin-top) 0 0 2.5em;
-    color: var(--classic-green)
-}
 
-.nav-program a {
-    color: inherit;
-}
-
-.aside-nav-content {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: -300px;
-    width: 300px;
-    height: 100%;
-    background-color: var(--classic-white);
-    padding: 10px;
-}
-
-.aside-nav-content hr {
-    margin: 10px 0;
-    border: 2px dashed var(--classic-blue);
-}
-
-.aside-nav-content a {
-    display: block;
-}
-
-.aside-nav-content .nav-program {
-    --padding: 16px;
-    width: 100%;
-    text-align: center;
-    padding-top: var(--padding);
-    padding-bottom: var(--padding);
-    border-bottom: var(--classic-sparator);
-    margin: 0;
-    transition: background-color 0.3s
-}
-
-.aside-nav-content .nav-program:hover {
-    color: var(--classic-white);
-    background-color: var(--classic-green);
-}
+// 未完待续...
 
 
-
-/* #endregion */
-
-/* #region @note header部分 */
-/* #region @note screen部分 */
 .screen {
     width: 100%;
     height: 95vh;
     background-image:
-        linear-gradient(-45deg, var(--classic-blue), var(--classic-green), var(--classic-blue));
+        linear-gradient(-45deg, @classic-blue, @classic-green, @classic-blue);
     padding-top: 40vh;
-    margin-bottom: var(--classic-margin);
+    margin-bottom: @classic-margin;
 }
 
 .site-title,
 .description-about-title {
     text-align: center;
-    color: var(--classic-white);
+    color: @classic-white;
 }
 
 .site-title {
     font-weight: bold;
     font-size: 36px;
-    margin-bottom: var(--classic-margin);
+    margin-bottom: @classic-margin;
 }
 
 .description-about-title {
@@ -114,10 +157,10 @@ nav {
     letter-spacing: 1.5px;
 }
 
-/* #endregion */
-/* #endregion */
 
-/* #region @note introduction部分 */
+
+
+
 .introduction {
     display: grid;
     grid-template:
@@ -137,16 +180,16 @@ nav {
 
 .self-info-container {
     grid-area: left;
-    margin-bottom: var(--classic-margin);
+    margin-bottom: @classic-margin;
 }
 
 .profile {
-    --profile-radius: 12px;
+    @classic-profile-radius: 12px;
     width: 100px;
     height: 100px;
     background-image: url({url});
-    background-color: var(--classic-blue);
-    border-radius: var(--profile-radius);
+    background-color: @classic-blue;
+    border-radius: @classic-profile-radius;
     margin: 10px auto;
 }
 
@@ -161,7 +204,7 @@ nav {
 .org {
     font-weight: normal;
     font-size: 14px;
-    color: var(--classic-gray);
+    color: @classic-gray;
 }
 
 .data {
@@ -180,11 +223,11 @@ nav {
     float: left;
     width: 33.333%;
     height: 100px;
-    border-right: var(--classic-sparator);
+    border-right: @classic-sparator;
     text-align: center;
     padding-top: 10px;
     line-height: 32px;
-    color: var(--classic-black);
+    color: @classic-black;
 }
 
 .data :last-child {
@@ -201,21 +244,21 @@ nav {
     width: 100%;
     padding: 8px 0;
     text-align: center;
-    color: var(--classic-white);
-    background-color: var(--classic-blue);
-    border-radius: var(--inpage-border-radius);
+    color: @classic-white;
+    background-color: @classic-blue;
+    border-radius: @classic-inpage-border-radius;
 }
 
 .about-me {
     grid-area: right;
     max-height: 600px;
     overflow: hidden;
-    margin-bottom: var(--classic-margin);
+    margin-bottom: @classic-margin;
 }
 
-/* #endregion */
 
-/* #region @note main部分 */
+
+
 main {
     display: grid;
     grid-template:
@@ -235,7 +278,7 @@ main {
 
 .articles-list {
     grid-area: a;
-    margin-bottom: var(--classic-margin);
+    margin-bottom: @classic-margin;
 }
 
 .article {
@@ -255,8 +298,8 @@ main {
 .article .img {
     width: 100%;
     height: 100%;
-    border-top-left-radius: var(--border-radius);
-    border-bottom-left-radius: var(--border-radius);
+    border-top-left-radius: @classic-inpage-border-radius;
+    border-bottom-left-radius: @classic-inpage-border-radius;
 }
 
 .article .article-content {
@@ -267,7 +310,7 @@ main {
 .article-content .title {
     width: 100%;
     max-height: 80px;
-    color: var(--classic-black);
+    color: @classic-black;
     font-size: 1.72em;
     margin-bottom: 10px;
     overflow: hidden;
@@ -313,17 +356,17 @@ main {
     width: 2.5em;
     height: 2.5em;
     margin: 0 6px;
-    box-shadow: var(--box-shadow);
-    border-radius: var(--inpage-border-radius);
+    box-shadow: @classic-box-shadow;
+    border-radius: @classic-inpage-border-radius;
 }
 
 .active {
-    background-color: var(--classic-green);
+    background-color: @classic-green;
 }
 
 aside {
     grid-area: b;
-    margin-bottom: var(--classic-margin);
+    margin-bottom: @classic-margin;
 }
 
 aside>div.card {
@@ -368,7 +411,7 @@ aside>div.card {
     max-height: 40px;
     font-size: 15px;
     overflow: hidden;
-    color: var(--classic-black);
+    color: @classic-black;
 }
 
 .advice-article time {
@@ -376,16 +419,14 @@ aside>div.card {
     color: #ccc
 }
 
-/* #endregion */
 
-/* #region @note footer部分 */
+
+
 footer {
     width: 100%;
-    background-color: var(--classic-green);
+    background-color: @classic-green;
     color: #fff;
     text-align: center;
     padding-top: 15px;
     padding-bottom: 15px;
 }
-
-/* #endregion */
