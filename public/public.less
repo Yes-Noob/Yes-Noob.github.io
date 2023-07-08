@@ -1,3 +1,5 @@
+@import "articleDesign.less";
+
 @classic-blue: #49b1f5;
 @classic-green: #00c4b6;
 @classic-red: #ff7242;
@@ -16,16 +18,8 @@
     box-sizing: border-box;
 }
 
-i.fa {
+.fa {
     font-size: 20px;
-}
-
-::content {
-    color: @classic-black;
-}
-
-body {
-    background-color: @classic-white;
 }
 
 .container {
@@ -58,7 +52,7 @@ body {
     }
 }
 
-.card {
+.card-area {
     border-radius: @classic-top-card-border-radius;
     background-color: @classic-white;
     box-shadow: @classic-box-shadow;
@@ -70,7 +64,7 @@ a {
     color: @classic-blue;
 
     &:hover {
-        color: #3da8f0;
+        color: darken(@classic-blue, 5%);
     }
 }
 
@@ -84,4 +78,158 @@ hr {
     background-size: cover;
     background-repeat: no-repeat;
     background-color: @classic-blue;
+}
+
+.yesnoob-profile {
+    width: 100px;
+    height: 100px;
+    background-image: url({url});
+    background-color: @classic-blue;
+    border-radius: 12px;
+    margin: 10px auto;
+}
+
+nav {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    left: 0;
+    top: -60px;
+    background-color: #fffe;
+    border-bottom: 1px solid @classic-gray;
+    padding: 0 80px;
+
+    .site-title {
+        margin-top: 15px;
+        float: left;
+        font-weight: 700;
+        font-size: 21px;
+    }
+
+    .nav-content {
+        float: right;
+        height: 100%;
+
+        .nav-program {
+            float: left;
+            margin: 18px 0 0 2.5em;
+            color: @classic-green;
+
+            a {
+                color: inherit;
+            }
+
+            @media screen and (max-width: 718px) {
+                display: none;
+            }
+        }
+
+        .aside-nav-button {
+            .nav-program();
+            display: none;
+
+            @media screen and (max-width: 718px) {
+                display: block;
+            }
+        }
+    }
+
+    // 为移动端准备的导航栏
+    .aside-nav-content {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        z-index: 0;
+        width: 300px;
+        height: 100%;
+        background-color: #fff;
+        padding: 10px;
+
+        .name {
+            margin: 15px 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 23px;
+        }
+
+        hr {
+            margin: 10px 0;
+            border: 2px dashed @classic-blue;
+        }
+
+        a {
+            display: block;
+        }
+
+        .nav-program {
+            @classic-padding: 16px;
+            width: 100%;
+            text-align: center;
+            padding-top: @classic-padding;
+            padding-bottom: @classic-padding;
+            border-bottom: @classic-sparator;
+            margin: 0;
+            transition: background-color 0.3s;
+
+            &:hover {
+                color: @classic-white;
+                background-color: @classic-green;
+            }
+        }
+
+        @media screen and (max-width: 718px) {
+            display: block;
+        }
+    }
+
+    .menu-mask {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -100;
+        animation-iteration-count: 1;
+
+        @keyframes show {
+            from {
+                background-color: #0000;
+            }
+
+            to {
+                background-color: #000a;
+            }
+        }
+
+        @keyframes hide {
+            from {
+                background-color: #000a;
+            }
+
+            to {
+                background-color: #0000;
+            }
+        }
+
+        @media screen and (min-width: 718px) {
+            display: none !important;
+        }
+    }
+
+    @media screen and (max-width: 718px) {
+        & {
+            padding: 0 30px;
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    background-color: @classic-green;
+    color: #fff;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
