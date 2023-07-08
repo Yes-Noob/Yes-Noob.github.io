@@ -1,6 +1,5 @@
 @import "/public/public.less";
 
-
 nav {
 
     width: 100%;
@@ -144,120 +143,121 @@ nav {
     }
 }
 
-
-.screen {
-    width: 100%;
-    height: 95vh;
-    background-image: linear-gradient(-45deg, @classic-blue, @classic-green, @classic-blue);
-    padding-top: 40vh;
-    margin-bottom: @classic-margin;
-    text-align: center;
-    color: @classic-white;
-
-    .site-title {
-        font-weight: bold;
-        font-size: 36px;
+header {
+    .screen {
+        width: 100%;
+        height: 95vh;
+        background-image: linear-gradient(-45deg, @classic-blue, @classic-green, @classic-blue);
+        padding-top: 40vh;
         margin-bottom: @classic-margin;
-    }
+        text-align: center;
+        color: @classic-white;
 
-    .description-about-title {
-        font-size: 18px;
-        letter-spacing: 1.5px;
-    }
-}
-
-.introduction {
-    display: grid;
-    grid-template:
-        "left right" auto
-        / 3fr 9fr;
-    gap: 0 15px;
-
-    .self-info-container {
-        grid-area: left;
-        margin-bottom: @classic-margin;
-
-        .profile {
-            @classic-profile-radius: 12px;
-            width: 100px;
-            height: 100px;
-            background-image: url({url});
-            background-color: @classic-blue;
-            border-radius: @classic-profile-radius;
-            margin: 10px auto;
-        }
-
-        .name,
-        .org {
-            margin: 15px 0;
-            text-align: center;
+        .site-title {
             font-weight: bold;
-            font-size: 23px;
+            font-size: 36px;
+            margin-bottom: @classic-margin;
         }
 
-        .org {
-            font-weight: normal;
-            font-size: 14px;
-            color: @classic-gray;
+        .description-about-title {
+            font-size: 18px;
+            letter-spacing: 1.5px;
         }
+    }
 
-        .data {
-            width: 100%;
-            margin: 10px 0;
+    .introduction {
+        display: grid;
+        grid-template:
+            "left right" auto
+            / 3fr 9fr;
+        gap: 0 15px;
 
-            &>div {
-                float: left;
-                width: 33.333%;
+        .self-info-container {
+            grid-area: left;
+            margin-bottom: @classic-margin;
+
+            .profile {
+                @classic-profile-radius: 12px;
+                width: 100px;
                 height: 100px;
-                border-right: @classic-sparator;
-                text-align: center;
-                padding-top: 10px;
-                line-height: 32px;
-                color: @classic-black;
-            }
-
-            &::after {
-                content: "";
-                clear: both;
-                display: block;
-                overflow: hidden;
-            }
-
-            &:last-child {
-                border-right: none
-            }
-        }
-
-        .find-me {
-            width: 100%;
-            margin-bottom: 10px;
-
-            a {
-                display: block;
-                width: 100%;
-                padding: 8px 0;
-                text-align: center;
-                color: @classic-white;
+                background-image: url({url});
                 background-color: @classic-blue;
-                border-radius: @classic-inpage-border-radius;
+                border-radius: @classic-profile-radius;
+                margin: 10px auto;
+            }
+
+            .name,
+            .org {
+                margin: 15px 0;
+                text-align: center;
+                font-weight: bold;
+                font-size: 23px;
+            }
+
+            .org {
+                font-weight: normal;
+                font-size: 14px;
+                color: @classic-gray;
+            }
+
+            .data {
+                width: 100%;
+                margin: 10px 0;
+
+                &>div {
+                    float: left;
+                    width: 33.333%;
+                    height: 100px;
+                    border-right: @classic-sparator;
+                    text-align: center;
+                    padding-top: 10px;
+                    line-height: 32px;
+                    color: @classic-black;
+                }
+
+                &::after {
+                    content: "";
+                    clear: both;
+                    display: block;
+                    overflow: hidden;
+                }
+
+                &:last-child {
+                    border-right: none
+                }
+            }
+
+            .find-me {
+                width: 100%;
+                margin-bottom: 10px;
+
+                a {
+                    display: block;
+                    width: 100%;
+                    padding: 8px 0;
+                    text-align: center;
+                    color: @classic-white;
+                    background-color: @classic-blue;
+                    border-radius: @classic-inpage-border-radius;
+                }
             }
         }
-    }
 
-    @media screen and (max-width: 992px) {
-        & {
-            grid-template:
-                "left" auto
-                "right" auto
-                / 100%;
+        @media screen and (max-width: 992px) {
+            & {
+                grid-template:
+                    "left" auto
+                    "right" auto
+                    / 100%;
+            }
         }
-    }
 
-    .about-me {
-        grid-area: right;
-        max-height: 600px;
-        overflow: hidden;
-        margin-bottom: @classic-margin;
+        .about-me {
+            grid-area: right;
+            max-height: 600px;
+            overflow: hidden;
+            margin-bottom: @classic-margin;
+        }
     }
 }
 
@@ -425,8 +425,6 @@ main {
         }
     }
 }
-
-
 
 footer {
     width: 100%;
