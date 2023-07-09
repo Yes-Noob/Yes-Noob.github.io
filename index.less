@@ -9,6 +9,7 @@ header {
         margin-bottom: @classic-margin;
         text-align: center;
         color: @classic-white;
+        animation: display 1s;
 
         .site-title {
             font-weight: bold;
@@ -19,6 +20,17 @@ header {
         .description-about-title {
             font-size: 18px;
             letter-spacing: 1.5px;
+        }
+
+        .screen-mask {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            animation: mask_show_screen 1s;
         }
     }
 
@@ -266,5 +278,27 @@ main {
                 "b" auto
                 / 100%;
         }
+    }
+}
+
+@keyframes display {
+    from {
+        transform: translate(0, 50px);
+    }
+
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes mask_show_screen {
+    from {
+        display: block;
+        background-color: var(--system-color);
+    }
+
+    to {
+        display: none;
+        background-color: #ffffff00;
     }
 }
