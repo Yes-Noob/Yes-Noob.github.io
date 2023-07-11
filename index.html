@@ -14,12 +14,12 @@
 </head>
 
 <body>
-    <!-- 遮罩层 -->
-    <div class="screen-mask"></div>
-
+    <!-- 遮罩 -->
+    <div id="mask"></div>
+    
     <!-- 导航栏 -->
     <nav></nav>
-    
+
     <!-- 网站开头 -->
     <header>
         <!-- 大屏幕 -->
@@ -31,7 +31,7 @@
         <div class="introduction container">
             <!-- 个人信息 -->
             <div class="self-info-container">
-                <div class="card-area">
+                <div class="cardbox">
                     <div class="yesnoob-profile"></div>
                     <div class="name">Yes-Noob</div>
                     <div class="org">Starlight Studio</div>
@@ -57,7 +57,7 @@
                 </div>
             </div>
             <!-- 置顶帖子 -->
-            <div class="top-article card-area">
+            <div class="top-article cardbox">
                 <article>{top-article}</article>
             </div>
         </div>
@@ -68,12 +68,10 @@
         <!-- 文章列表 -->
         <div class="articles-list">
             <template id="article">
-                <div class="article card-area">
+                <div class="article cardbox">
                     <a href="{href}">
                         <div class="img-container">
-                            <a href="{href}">
-                                <div class="img"></div>
-                            </a>
+                            <div class="img"></div>
                         </div>
                     </a>
                     <div class="article-content">
@@ -95,7 +93,7 @@
         </div>
         <!-- 侧边栏 -->
         <aside>
-            <div class="card-area">
+            <div class="cardbox">
                 <div class="advices">
                     <div class="program-title">Advice</div>
                     <template id="advice-article">

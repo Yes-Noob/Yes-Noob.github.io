@@ -1,5 +1,11 @@
 $("nav").load("/public/html/nav.html", "data", () => {
     /**
+     * 将mask置于其后
+     */
+    {
+        $("nav").append("<div class='nav-mask'></div>")
+    }
+    /**
      * 处理导航栏元素
      */
     {
@@ -40,7 +46,7 @@ $("nav").load("/public/html/nav.html", "data", () => {
             temp_program_mb.before(rep(text_program_mb))
         }
     }
-    
+
     /**
      * 处理页面滚动时导航栏的状态
      */
@@ -48,11 +54,11 @@ $("nav").load("/public/html/nav.html", "data", () => {
         const DISPLAY_POS = 300
         let scrolling = false
         let isNavDisplay = false
-    
+
         window.onscroll = () => {
             scrolling = true
         }
-    
+
         setInterval(() => {
             if (scrolling == true) {
                 scrolling = false
@@ -68,60 +74,45 @@ $("nav").load("/public/html/nav.html", "data", () => {
             }
         }, 300)
     }
-    
+
     /**
      * 侧边栏导航弹出
      */
     {
         let isShow = false
-    
         // 背景黑布
         let menuMask = {
             show: () => {
-                let element = $(".menu-mask")
-                element.attr("style", `
-                    animation: show 0.5s;
-                    animation-iteration-count: 1;
-                    background-color: #000a;
-                `)
-                //element.animate({ width: "-=300px" }, 500)
+                $(".nav-mask").fadeIn(500)
+                $(".site-title").fadeOut(500)
             },
-    
             hide: () => {
-                let element = $(".menu-mask")
-                element.attr("style", `
-                    animation: hide 0.5s;
-                    animation-iteration-count: 1;
-                `, () => {
-                    element.css("display", "none")
-                })
+                $(".nav-mask").fadeOut(500)
+                $(".site-title").fadeIn(500)
             }
         }
-    
         // 侧边栏
         let asideNavContent = {
             show: () => {
-                let element = $(".aside-nav-content")
-                element.animate({ right: "0" }, 500)
+                $(".aside-nav-content").animate({ right: "0" }, 500)
             },
-    
+
             hide: () => {
-                let element = $(".aside-nav-content")
-                element.animate({ right: "-300" }, 500)
+                $(".aside-nav-content").animate({ right: "-300" }, 500)
             }
         }
-    
         // 打开侧边栏
         $("#aside-nav-button").click(() => {
-            menuMask.show()
-            asideNavContent.show()
-            setTimeout(() => {
-                isShow = true
-            }, 500)
+            if (isShow === false) {
+                menuMask.show()
+                asideNavContent.show()
+                setTimeout(() => {
+                    isShow = true
+                }, 500)
+            }
         })
-    
         // 关闭侧边栏
-        $(".menu-mask").click(() => {
+        $(".nav-mask").click(() => {
             if (isShow === true) {
                 menuMask.hide()
                 asideNavContent.hide()
@@ -131,14 +122,7 @@ $("nav").load("/public/html/nav.html", "data", () => {
             }
         })
     }
-});
+})
+$("footer").load("/public/html/footer.html")
 
-$("footer").load("/public/html/footer.html");
-/**
- * 动画的遮罩消失
- */
-{
-    setTimeout(() => {
-        $(".screen-mask").hide()
-    }, 1000)
-}
+$("#mask").fadeOut(1000)
