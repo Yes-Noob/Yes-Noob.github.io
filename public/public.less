@@ -116,5 +116,16 @@ hr {
     height: 100%;
     z-index: 1;
     background-color: var(--system-color);
-    backdrop-filter: blur(30px);
+
+    animation: fadeIn 1s;
+    @keyframes fadeIn {
+        from {
+            backdrop-filter: blur(10px);
+            background-color: var(--system-color);
+        }
+        to {
+            backdrop-filter: none;
+            background-color: #fff0;
+        }
+    }
 }

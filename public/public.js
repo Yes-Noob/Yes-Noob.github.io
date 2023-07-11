@@ -125,4 +125,6 @@ $("nav").load("/public/html/nav.html", "data", () => {
 })
 $("footer").load("/public/html/footer.html")
 
-$("#mask").fadeOut(1000)
+setTimeout(() => {
+    $("#mask").hide()
+}, 1000)
