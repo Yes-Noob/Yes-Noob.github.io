@@ -24,6 +24,17 @@
     html {
         --system-color: #333;
     }
+    body {
+        animation: fadeIn;
+    }
+    @keyframes fadeIn {
+        from {
+            background-color: var(--system-color);
+        }
+        to {
+            background-color: var(#fff);
+        }
+    }
     
 }
 
@@ -104,23 +115,14 @@ hr {
     margin: 10px auto;
 }
 
-#mask {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background-color: var(--system-color);
-
+header {
+    animation: fadeIn 1s;
     @keyframes fadeIn {
         from {
-            backdrop-filter: blur(5px);
-            background-color: var(--system-color);
+            opacity: 0;
         }
         to {
-            backdrop-filter: none;
-            background-color: #fff0;
+            opacity: 1;
         }
     }
 }
