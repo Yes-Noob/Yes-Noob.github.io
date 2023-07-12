@@ -9,7 +9,6 @@ header {
         margin-bottom: @classic-margin;
         text-align: center;
         color: @classic-white;
-        animation: display 1s;
 
         .site-title {
             font-weight: bold;
@@ -21,6 +20,14 @@ header {
             font-size: 18px;
             letter-spacing: 1.5px;
         }
+
+        @media (prefers-color-scheme: dark) {
+            @precent: 13%;
+            background-image: linear-gradient(-45deg,
+                darken(@classic-blue, @precent),
+                darken(@classic-green, @precent),
+                darken(@classic-blue, @precent));
+        }
     }
 
     .introduction {
@@ -29,6 +36,7 @@ header {
             "left right" auto
             / 3fr 9fr;
         gap: 0 15px;
+        .text();
 
         .self-info-container {
             grid-area: left;
@@ -60,7 +68,7 @@ header {
                     text-align: center;
                     padding-top: 10px;
                     line-height: 32px;
-                    color: @classic-black;
+                    color: inherit;
                 }
 
                 &::after {
@@ -200,8 +208,12 @@ main {
                 width: 2.5em;
                 height: 2.5em;
                 margin: 0 6px;
-                box-shadow: @classic-box-shadow;
+                box-shadow: var(--classic-box-shadow);
                 border-radius: @classic-inpage-border-radius;
+            }
+
+            #left, #right {
+                display: none;
             }
         }
     }
@@ -209,6 +221,7 @@ main {
     aside {
         grid-area: b;
         margin-bottom: @classic-margin;
+        .text();
 
         .cardbox {
             min-height: 200px;
@@ -255,7 +268,7 @@ main {
 
                 time {
                     font-size: 13px;
-                    color: #ccc
+                    color: @classic-gray;
                 }
             }
         }

@@ -2,41 +2,35 @@
 @import "style/nav.less";
 @import "style/footer.less";
 
-@classic-blue: #49b1f5;
-@classic-green: #00c4b6;
-@classic-red: #ff7242;
-@classic-white: #fff;
-@classic-black: #2a2a2a;
-@classic-gray: #aaa;
-@classic-sparator: 0.6px solid #efefef;
-@classic-margin: 40px;
-@classic-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.05);
-@classic-top-card-border-radius: 10px;
-@classic-inpage-border-radius: 5px;
 
 @media (prefers-color-scheme: light) {
     html {
         --system-color: #fff;
+        --classic-box-shadow: 0 3px 8px 6px #07111b0d;
+    }
+
+    .cardbox {
+        background-color: #fff;
+        box-shadow: var(--classic-box-shadow);
     }
 }
 
 @media (prefers-color-scheme: dark) {
     html {
         --system-color: #333;
+        --classic-box-shadow: 0 2px 5px 3px #d3d8de3e;
     }
+
+    .cardbox {
+        background-color: #666;
+        box-shadow: var(--classic-box-shadow);
+    }
+
     body {
-        animation: fadeIn;
+        background-color: var(--system-color);
     }
-    @keyframes fadeIn {
-        from {
-            background-color: var(--system-color);
-        }
-        to {
-            background-color: var(#fff);
-        }
-    }
-    
 }
+
 
 * {
     margin: 0;
@@ -52,8 +46,8 @@
     @classic-gutter-x: 1.5rem;
     @classic-gutter-y: 0;
     width: 100%;
-    padding-right: calc(@classic-gutter-x * 0.5);
-    padding-left: calc(@classic-gutter-x * 0.5);
+    padding-right: @classic-gutter-x * 0.5;
+    padding-left: @classic-gutter-x * 0.5;
     margin-right: auto;
     margin-left: auto;
 
@@ -80,8 +74,6 @@
 
 .cardbox {
     border-radius: @classic-top-card-border-radius;
-    background-color: @classic-white;
-    box-shadow: @classic-box-shadow;
     padding: 8px;
 }
 
@@ -121,8 +113,15 @@ header {
         from {
             opacity: 0;
         }
+
         to {
             opacity: 1;
         }
+    }
+}
+
+.text {
+    @media (prefers-color-scheme: dark) {
+        color: #fff !important;
     }
 }
