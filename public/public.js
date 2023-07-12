@@ -124,7 +124,3 @@ $("nav").load("/public/html/nav.html", "data", () => {
     }
 })
 $("footer").load("/public/html/footer.html")
-// $("#mask").css("animation", "fadeIn 1s")
-// setTimeout(() => {
-//     $("#mask").hide()
-// }, 1000)
