@@ -16,7 +16,7 @@ $("nav").load("/public/html/nav.html", "data", () => {
                 "href": "/index.html"
             },
             {
-                "name": "Tags",
+                "name": "Archives",
                 "href": "/custom-sites/replace.html"
             },
             {
