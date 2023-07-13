@@ -1,4 +1,6 @@
 nav {
+    @center-line-height: 57px;
+    .text();
     width: 100%;
     height: 60px;
     position: fixed;
@@ -7,30 +9,23 @@ nav {
     background-color: #fffe;
     border-bottom: 1px solid @classic-gray;
     padding: 0 80px;
-    .text();
-    @media (prefers-color-scheme: dark) {
-        background-color: #0004;
-    }
 
-    .site-title {
-        margin-top: 15px;
+    .site-title { // 导航栏左侧标题
         float: left;
+        line-height: @center-line-height;
         font-weight: 700;
         font-size: 21px;
     }
 
-    .nav-content {
+    .nav-content { // 导航栏元素
         float: right;
         height: 100%;
 
         .nav-program {
-            float: left;
-            margin: 18px 0 0 2.5em;
+            display: inline-block;
+            line-height: @center-line-height;
+            margin: 0 18px;
             color: @classic-green;
-
-            a {
-                color: inherit;
-            }
 
             @media screen and (max-width: 718px) {
                 display: none;
@@ -58,6 +53,15 @@ nav {
         background-color: #fff;
         padding: 10px;
 
+        .profile {
+            width: 100px;
+            height: 100px;
+            background-image: url({url});
+            background-color: @classic-blue;
+            border-radius: 12px;
+            margin: 10px auto;
+        }
+
         .name {
             margin: 15px 0;
             text-align: center;
@@ -70,17 +74,10 @@ nav {
             border: 2px dashed @classic-blue;
         }
 
-        a {
-            display: block;
-        }
-
         .nav-program {
-            @classic-padding: 16px;
+            display: inline-block;
             width: 100%;
             text-align: center;
-            padding-top: @classic-padding;
-            padding-bottom: @classic-padding;
-            border-bottom: @classic-sparator;
             margin: 0;
             transition: background-color 0.3s;
 
@@ -113,5 +110,9 @@ nav {
         & {
             padding: 0 30px;
         }
+    }
+    
+    @media (prefers-color-scheme: dark) {
+        background-color: #0004;
     }
 }

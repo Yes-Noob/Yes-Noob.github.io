@@ -3,9 +3,7 @@
 <div class="nav-content">
     <!-- 导航栏模版 -->
     <template id="nav-program-pc">
-        <div class="nav-program">
-            <a href="{href}">{name}</a>
-        </div>
+        <a class="nav-program" href="{href}">{name}</a>
     </template>
     <div class="aside-nav-button" id="aside-nav-button">
         <a href="javascript:void(0)"><i class="fa fa-bars"></i></a>
@@ -13,13 +11,13 @@
 </div>
 <!-- 为移动设备准备的导航栏 -->
 <div class="aside-nav-content">
-    <div class="yesnoob-profile"></div>
+    <div class="profile"></div>
     <div class="name">Yes-Noob</div>
     <hr>
     <!-- 导航栏模版 -->
     <template id="nav-program-mb">
         <a href="{href}">
-            <div class="nav-program">{name}</div>
+            {name}
         </a>
     </template>
 </div>

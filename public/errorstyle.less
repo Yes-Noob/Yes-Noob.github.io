@@ -1,0 +1,21 @@
+html {
+    @media (prefers-color-scheme: light) {
+        --system-color: #fff;
+        --text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        --system-color: #333;
+        --text-color: #fff;
+    }
+}
+
+.text {
+    color: var(--text-color);
+    text-align: center;
+}
+
+h1,
+p {
+    .text();
+}
