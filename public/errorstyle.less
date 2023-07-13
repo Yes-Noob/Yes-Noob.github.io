@@ -10,6 +10,15 @@ html {
     }
 }
 
+body {
+    background-color: var(--system-color);
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid var(--text-color);
+}
+
 .text {
     color: var(--text-color);
     text-align: center;
@@ -18,4 +27,13 @@ html {
 h1,
 p {
     .text();
+}
+
+a {
+    text-decoration: none;
+    color: #49b1f5;
+
+    &:hover {
+        color: darken(#49b1f5, 5%);
+    }
 }
