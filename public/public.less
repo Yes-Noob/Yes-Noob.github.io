@@ -1,11 +1,21 @@
-@import "style/define.less";
-@import "style/nav.less";
-@import "style/footer.less";
+@classic-blue: #49b1f5;
+@classic-green: #00c4b6;
+@classic-red: #ff7242;
+@classic-white: #fff;
+@classic-black: #2a2a2a;
+@classic-gray: #aaa;
+@sparator: 0.6px solid #efefef;
+@classic-margin: 40px;
+@classic-top-card-border-radius: 10px;
+@classic-inpage-border-radius: 5px;
 
+@import "/public/com/nav/nav.less"; // 导航栏样式
+@import "/public/com/footer/footer.less"; // 页脚
 
+// 日间模式
 @media (prefers-color-scheme: light) {
     html {
-        --system-color: #fff;
+        --system-color: #fcfcfc;
         --classic-box-shadow: 0 3px 8px 6px #07111b0d;
     }
 
@@ -15,6 +25,7 @@
     }
 }
 
+// 夜间模式
 @media (prefers-color-scheme: dark) {
     html {
         --system-color: #333;
@@ -25,12 +36,11 @@
         background-color: #595959;
         box-shadow: var(--classic-box-shadow);
     }
-
-    body {
-        background-color: var(--system-color);
-    }
 }
 
+body {
+    background-color: var(--system-color);
+}
 
 * {
     margin: 0;
@@ -42,14 +52,12 @@
     font-size: 20px;
 }
 
+// 主容器
 .container {
-    @classic-gutter-x: 1.5rem;
-    @classic-gutter-y: 0;
     width: 100%;
-    padding-right: @classic-gutter-x * 0.5;
-    padding-left: @classic-gutter-x * 0.5;
-    margin-right: auto;
-    margin-left: auto;
+    padding-right: 1.5rem * 0.5;
+    padding-left: 1.5rem * 0.5;
+    margin: 0 auto;
 
     @media (min-width: 576px) {
         max-width: 540px;
@@ -72,6 +80,7 @@
     }
 }
 
+// 区块卡片盒子
 .cardbox {
     border-radius: @classic-top-card-border-radius;
     padding: 8px;
@@ -82,13 +91,13 @@ a {
     color: @classic-blue;
 
     &:hover {
-        color: darken(@classic-blue, 5%);
+        color: darken(@classic-blue, 7%);
     }
 }
 
 hr {
-    border-bottom: @classic-sparator;
-    margin: 5px 0;
+    border: none;
+    border-bottom: @sparator;
 }
 
 .img {
@@ -100,6 +109,7 @@ hr {
 
 header {
     animation: fadeIn 1s;
+
     @keyframes fadeIn {
         from {
             opacity: 0;
@@ -117,6 +127,6 @@ header {
 
 .text {
     @media (prefers-color-scheme: dark) {
-        color: #fff !important;
+        color: #fff;
     }
 }

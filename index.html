@@ -64,6 +64,7 @@
     <main class="container">
         <!-- 文章列表 -->
         <div class="articles-list">
+            <!-- 文章模版 -->
             <template id="article">
                 <div class="article cardbox">
                     <a href="{href}">
@@ -83,10 +84,10 @@
                     </div>
                 </div>
             </template>
+            
+            <!-- 分页 -->
             <div class="pagination">
-                <a id="left" href="{href}">&lt;</a>
                 <span class="active">1</span>
-                <a id="right" href="{href}">&gt;</a>
             </div>
         </div>
         <!-- 侧边栏 -->
@@ -94,6 +95,7 @@
             <div class="cardbox">
                 <div class="advices">
                     <div class="program-title">Advice</div>
+                    <!-- 推荐文章模版 -->
                     <template id="advice-article">
                         <div class="advice-article">
                             <a href="{href}" style="display: grid;">
@@ -116,8 +118,8 @@
     <footer></footer>
 
     <!-- JavaScript -->
-    <script src="/public/public.js" defer></script>
-    <script src="index.js" defer></script>
+    <script src="/public/public.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
